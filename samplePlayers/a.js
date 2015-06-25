@@ -4,9 +4,9 @@ export default function player(hand) {
   // what is the card on the table
   return function(isPlaying, state) {
     if (isPlaying) {
-      console.log(state.myPlayerIdx, 'Table:', state.onTheTable, 'Hand:', state.myHand.join(','));
+      var play =  state.myHand.pop();
+      console.log('Player ' + state.myPlayerIdx);
+      return parseInt(play) >= parseInt(state.onTheTable) ? play : null;
     }
-    // return card, array of cards, or false
-    return;
   }
 }
