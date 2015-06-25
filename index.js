@@ -1,4 +1,9 @@
 
 require("babel/register");
 
-require('./lib/play.js');
+var game = require('./lib/game');
+var player = require('./samplePlayers/a');
+
+const results = game([player, player, player, player, player]);
+console.log(results);
+
