@@ -1,0 +1,23 @@
+{
+  "name": "skiano.president",
+  "version": "1.0.0",
+  "description": "Implementation of card game president",
+  "main": "lib/game.js",
+  "dependencies": {
+    "babel": "^5.6.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skiano/president.git"
+  },
+  "author": "Greg Skiano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skiano/president/issues"
+  },
+  "homepage": "https://github.com/skiano/president"
+}
