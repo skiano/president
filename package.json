@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "postinstall": "gulp"
+    "postinstall": "gulp default"
   },
   "repository": {
     "type": "git",
