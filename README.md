@@ -18,15 +18,15 @@ _This describes the rules as implemented by this function. There are variations_
   * The last player with cards looses
 
 * Rules
-  * You can play a single card, or multiples if they are all the same numeric value
+  * You can play a single card, or multiples _if they are all the same numeric value_
   * You must always play an equal or higher value than the preivious move
   * Value follows this heirarchy
-    * higher numbers are more valuable (4 > 3 and [4,4] > [3,3])
-    * doubles are higher than singles, tripples higher than doubles ([4,4,4] > [6,6] > 13)
+    * Higher numbers are more valuable:  _4 > 3 and [4,4] > [3,3]_
+    * Doubles are higher than singles, tripples higher than doubles: _[4,4,4] > [6,6] > 13_
   * If you play the same value, the next player is skipped
-  * No matter what, you can always play a 2 or 3
-  * Playing a 2 resets the table to the lowest value
-  * Playing a 3 reverses the direction of gameplay
+  * No matter what, you can always play a __2__ or __3__
+  * Playing a __2__ resets the table to the lowest value
+  * Playing a __3__ reverses the direction of gameplay
   * If you cannot play a higher card you must pass
 
   
