@@ -70,7 +70,7 @@ function createPlayer(setName) {
 }
 ```
 
-```myView``` is a snapshot of the game with the following properties:
+__```myView```__ is a snapshot of the game with the following properties:
 * __hand__ {list} The cards you currently hold
 * __players__ {number} The number of players still in the game (including you)
 * __table__ {array} The card(s) on the table. There are times when the array is empty
