@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "mocha -r should",
+    "test-watch": "mocha test -r should -w lib --reporter min --compilers js:babel/register",
     "postinstall": "gulp default"
   },
   "repository": {
