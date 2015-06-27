@@ -86,13 +86,12 @@ _**Note:** ```myView``` does not expose the history of the game to you. So if yo
 
 #### The Deck
 
-Cards are represented as strings. Face cards are represented by their numerical value. Your hand is a list of card strings.
+Cards are represented as strings. Face cards are represented by their numerical value. Your hand is a list of card strings. For Example:
 
-For Example:
 ```javascript
 var yourHand = ['4h','11d','2s','14c'];
 ```
-Represents the following
+Represents the following:
  * Four of hearts
  * Jack of Diamonds
  * Two of Spades
