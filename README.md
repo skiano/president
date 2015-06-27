@@ -41,7 +41,7 @@ _This describes the rules as implemented, ignoring other variations_
 
 ## The interface
 
-#### The President Function
+#### Running a single game
 
 ```president``` is a function that takes players creators as inputs and returns the results of a single game with those players.
 
