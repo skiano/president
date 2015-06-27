@@ -22,7 +22,7 @@ _This describes the rules as implemented, ignoring other variations_
 * __Goals__
   * Players are trying to get rid of all their cards
   * Players exit the game when the run out of cards
-  * The last player holdind cards looses
+  * The last player holding cards looses
 
 * __Rules__
   * You can play a single card or multiples __if they are all the same numeric value__
