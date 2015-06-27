@@ -10,7 +10,7 @@ npm install skiano.president
 
 #### The Rules
 
-_This describes the rules as implemented by this function only._
+_This describes the rules as implemented, ignoring other variations_
 
 * __Setup__
   * Between 3 and 8 players
