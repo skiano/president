@@ -8,7 +8,7 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 $ npm install skiano.president
 ```
 
-#### The Rules
+## The Rules
 
 _This describes the rules as implemented, ignoring other variations_
 
@@ -35,6 +35,8 @@ _This describes the rules as implemented, ignoring other variations_
   * Playing a __2__ resets the table to the lowest value
   * Playing a __3__ reverses the direction of gameplay
   * If you cannot play a higher card you must pass
+
+## The interface
 
 #### The President Function
 
