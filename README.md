@@ -58,7 +58,7 @@ var results = president(playerA, playerB, playerC);
 * __rank__ {list} A list of player ids sorted from winner to loser
 * __events__ {list} The complete history of the game
 
-#### The Player Function
+#### The Player Functions
 
 To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
@@ -83,4 +83,10 @@ var player = (function playerGenerator() {
 })();
 ```
 
-_TODO: more info..._
+```myView``` is an object with the following properties:
+* __hand__ {list} The cards you currently hold
+* __players__ {number} The number of players left in the game (including you)
+* __table__ {number or array} The card(s) on the table. If there are no cards table=0
+* __testMove__ {function} A function you are free to use to vallidate a move before you commit to it
+
+
