@@ -47,13 +47,8 @@ _This describes the rules as implemented, ignoring other variations_
 
 ```javascript
 var president = require('skiano.president');
-
-var playerA = function () {};
-var playerB = function () {};
-var playerC = function () {};
-
-var results = president(playerA, playerB, playerC);
-
+var createPlayer = require() // your player creator
+var results = president(createPlayer, createPlayer, createPlayer);
 ```
 
 ```results``` is an object with the folowing properties:
@@ -63,32 +58,24 @@ var results = president(playerA, playerB, playerC);
 
 #### The Player Functions
 
-To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
+To play the game, you create a function that returns a player function. The player function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
 ```javascript
-function player(isMyPlay, myView) {
-  if (isMyPlay) {
-    // it is your turn to play; return your play
-  } else {
-    // someone else is playing. just watch...
+
+function createPlayer(playerIdx) {
+  return function player(isMyPlay, myView) {
+    if (isMyPlay) {
+      // it is your turn to play; return your play
+    } else {
+      // someone else is playing. just watch...
+    }
   }
 }
 ```
 
-```myView``` is only a snapshot of the game at a specific moment (limited to your perspective). No history is directly exposed. If you want to use history (ie: card counting), it is your responsibility:
-
-```javascript
-var player = (function playerGenerator() {
-  // track data
-  return function player(isMyPlay, myView) {
-    // use data
-  }
-})();
-```
-
-```myView``` is an object with the following properties:
+```myView``` is a snapshot of the game with the following properties:
 * __hand__ {list} The cards you currently hold
-* __players__ {number} The number of players left in the game (including you)
+* __players__ {number} The number of players still in the game (including you)
 * __table__ {array} The card(s) on the table. There are times when the array is empty
 * __getValidPlays__ {function} returns all valid plays for your current hand
 
