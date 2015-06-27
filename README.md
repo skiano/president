@@ -18,7 +18,7 @@ _This describes the rules as implemented by this function. There are variations_
   * The last player with cards looses
 
 * Rules
-  * You can play a single card, or multiples _if they are all the same numeric value_
+  * You can play a single card or multiples _(if they are all the same numeric value)_
   * You must always play an equal or higher value than the preivious move
   * Value follows this heirarchy
     * Higher numbers are more valuable:  _4 > 3 and [4,4] > [3,3]_
