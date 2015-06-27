@@ -48,8 +48,8 @@ function paddLeft(str, l, char) {
 }
 
 function sortHand(hand) {
-  return hand.split().sort(function (a, b) {
-    return parseInt(a) > parseInt(b);
-  }).join();
+  return hand.split(',').sort(function (a, b) {
+    return parseInt(a) < parseInt(b);
+  }).join(' ');
 }
 
