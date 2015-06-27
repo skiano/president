@@ -1,5 +1,4 @@
 
-
 describe('helpers', function () {
   var unit, deck;
   beforeEach(function () {
@@ -13,11 +12,11 @@ describe('helpers', function () {
     ];
   });
 
-  it('should make a deck', function () {
+  it('makeDeck', function () {
     unit.makeDeck().sort().should.eql(deck);
   });
 
-  it('should shuffle', function () {
+  it('shuffle', function () {
     var hands = unit.shuffle(5);
     var total = hands.reduce(function (v, h) {
       return v.concat(h);
@@ -25,8 +24,14 @@ describe('helpers', function () {
     total.sort().should.eql(deck);
   });
 
-  it('should extract number values from play', function () {
+  it('getValue', function () {
     unit.getValue('13h').should.equal(13);
     unit.getValue(['7c', '7h', '7d']).should.equal(7);
+  });
+
+  it('hasCard', function () {
+    unit.hasCard(['2h','3c'], '13h').should.be.false();
+    unit.hasCard(['2h','3c'], '3h').should.be.false();
+    unit.hasCard(['2h','3c'], '2h').should.be.true();
   });
 });
