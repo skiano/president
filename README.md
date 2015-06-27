@@ -47,7 +47,7 @@ _This describes the rules as implemented, ignoring other variations_
 
 ```javascript
 var president = require('skiano.president');
-var createPlayer = require() // your player creator
+var createPlayer = require(/* your player creator */)
 var results = president(createPlayer, createPlayer, createPlayer);
 ```
 
