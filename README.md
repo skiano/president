@@ -18,11 +18,11 @@ _This describes the rules as implemented by this function. There are variations_
   * The last player with cards looses
 
 * Rules
-  * You can play a single card or multiples _(if they are all the same numeric value)_
+  * You can play a single card or multiples __if they are all the same numeric value__
   * You must always play an equal or higher value than the preivious move
   * Value follows this heirarchy
-    * Higher numbers are more valuable:  _4 > 3 and [4,4] > [3,3]_
-    * Doubles are higher than singles, tripples higher than doubles: _[4,4,4] > [6,6] > 13_
+    * Higher numbers are more valuable:  __4 > 3 and [4,4] > [3,3]__
+    * Doubles are higher than singles, tripples higher than doubles: __[4,4,4] > [6,6] > 13__
   * If you play the same value, the next player is skipped
   * No matter what, you can always play a __2__ or __3__
   * Playing a __2__ resets the table to the lowest value
