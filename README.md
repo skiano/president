@@ -15,31 +15,21 @@ var president = require('skiano.president');
 var playerA = function () {};
 var playerB = function () {};
 var playerC = function () {};
-```
 
-```
 var gameResults = president(playerA, playerB, playerC);
 
-/*
- * president() takes a set of 'player' functions
- * and returns the results of the game
- */
- 
+```
 
-
-/*
- * 
- * returns
- *
- * {
- *  winner: 'playerB',
- *  rank: ['playerB','playerC,'playerA'],
- *  events: [
- *   {player: 'playerA', card: '4c', finished: false},
- *   {player: 'playerB', card: '9h', finished: false}
- *   {player: 'playerC', card: ['11d', '11s'], finished: false}
- *   ... more events
- *   {player: 'playerA', card: '7h', finished: true},
- *  ]
- */
+```
+{
+  winner: 'playerB',
+  rank: ['playerB','playerC,'playerA'],
+  events: [
+   {player: 'playerA', card: '4c', finished: false},
+   {player: 'playerB', card: '9h', finished: false}
+   {player: 'playerC', card: ['11d', '11s'], finished: false}
+   ... more events
+   {player: 'playerA', card: '7h', finished: true},
+  ]
+}
 ```
