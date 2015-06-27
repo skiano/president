@@ -51,10 +51,10 @@ var createPlayer = require() // your player creator
 var results = president(createPlayer, createPlayer, createPlayer);
 ```
 
-```results``` is an object with the folowing properties:
-* __winner__ {string} The id of the winning player
-* __rank__ {list} A list of player ids sorted from winner to loser
-* __events__ {list} The complete history of the game
+* __```results```__ is an object with the folowing properties:
+  * __```winner__ {string} The id of the winning player
+  * __```rank```__ {list} A list of player ids sorted from winner to loser
+  * __```events```__ {list} The complete history of the game
 
 #### Creating a Player
 
@@ -77,10 +77,10 @@ function createPlayer(setName) {
 * __```isMyPlay```__ {boolean} lets you know if you need to play
 
 * __```myView```__ {object} a snapshot of the game with the following properties:
-  * __hand__ {list} The cards you currently hold
-  * __players__ {number} The number of players still in the game (including you)
-  * __table__ {array} The card(s) on the table. There are times when the array is empty
-  * __getValidPlays__ {function} returns all valid plays for your current hand
+  * __```hand```__ {list} The cards you currently hold
+  * __```players```__ {number} The number of players still in the game (including you)
+  * __```table```__ {array} The card(s) on the table. There are times when the array is empty
+  * __```getValidPlays```__ {function} returns all valid plays for your current hand
 
 _**Note:** ```myView``` does not expose the history of the game to you. So if you are interested in using previous plays in your strategy you must collect the data you want within ```createPlayer()```_
 
