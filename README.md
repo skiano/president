@@ -30,7 +30,7 @@ _This describes the rules as implemented, ignoring other variations_
   * Value follows this heirarchy
     * Ace is high 
     * Higher numbers are more valuable:  __4 > 3 and [4,4] > [3,3]__
-    * Doubles are higher than singles, tripples higher than doubles: __[4,4,4,4] > [7,7,7] > [9,9] > 13__
+    * Doubles are higher than singles, tripples higher than doubles: __[4,4,4,4] > [9,9] > 13__
   * If you play the same value as the previos player, the next player is skipped
   * No matter what, you can always play a __2__ or __3__
   * Playing a __2__ resets the table to the lowest value
