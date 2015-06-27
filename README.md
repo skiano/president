@@ -51,7 +51,7 @@ var createPlayer = require() // your player creator
 var results = president(createPlayer, createPlayer, createPlayer);
 ```
 
-* __```results```__ is an object with the folowing properties:
+* __```results```__ {object} the result of a single game. It has the following properties:
   * __```winner```__ {string} The id of the winning player
   * __```rank```__ {list} A list of player ids sorted from winner to loser
   * __```events```__ {list} The complete history of the game
