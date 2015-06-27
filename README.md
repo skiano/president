@@ -46,18 +46,3 @@ var player = (function playerGenerator() {
 })();
 ```
 
-#### The Results
-
-```javascript
-{
-  winner: 'playerB',
-  rank: ['playerB','playerC,'playerA'],
-  events: [
-   {player: 'playerA', card: '4c', finished: false},
-   {player: 'playerB', card: '9h', finished: false}
-   {player: 'playerC', card: ['11d', '11s'], finished: false}
-   ... more events
-   {player: 'playerA', card: '7h', finished: true},
-  ]
-}
-```
