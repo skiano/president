@@ -13,28 +13,17 @@ npm install skiano.president
 ```javascript
 var president = require('skiano.president');
 
-function playerGenerator() {
-  // infer information as state changes
-  return function player(isPlaying, state) {
-    // state.table = what card or cards are on the table
-    // state.hand = what cards are you currently holding
-    // state.players = how many players are still in the game
-    
-    if (isPlaying) {
-      // return null, a single card, or an array of cards
-      // you must follow the rules of the game
-    }
+// 'stateless' players
+var playerA = function (isPlaying, state) {};
+var playerB = function (isPlaying, state) {};
+
+// 'stateful' players
+var playerC = (function () {
+  var history = [];
+  return function (isPlaying, state) {
+    history.push(state.table);
   }
-}
+})();
 
-var players = [
-  playerGenerator(),
-  playerGenerator(),
-  playerGenerator(),
-  playerGenerator()
-];
-
-var gameResults = president(players); // for example [0, 1, 3, 4]
-
-
+var gameResults = president(playerA, playerB, playerC); // for example [0, 1, 3, 4]
 ```
