@@ -7,6 +7,7 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 _This describes the rules as implemented by this function only._
 
 * __Setup__
+  * Between 3 and 6 players
   * All cards are dealt to players (as evenly as possible)
   * Players can only see their own hand
   * Whoever has the 4 of clubs begins by placing it on the table (automatic)
