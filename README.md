@@ -15,7 +15,7 @@ _This describes the rules as implemented by this function. There are variations_
 * Goals
   * Players are trying to get rid of all their cards
   * Players exit the game when the run out of cards
-  * The last player with cards looses
+  * The last player holdind cards looses
 
 * Rules
   * You can play a single card or multiples __if they are all the same numeric value__
