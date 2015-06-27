@@ -72,15 +72,15 @@ function createPlayer(setName) {
 }
 ```
 
-__```setName```__ {function} (optional) allows you to set a custom name prefix for your player
+* __```setName```__ {function} (optional) allows you to set a custom name prefix for your player
 
-__```isMyPlay``__ {boolean} lets you know if you need to play
+* __```isMyPlay```__ {boolean} lets you know if you need to play
 
-__```myView```__ {object} a snapshot of the game with the following properties:
-* __hand__ {list} The cards you currently hold
-* __players__ {number} The number of players still in the game (including you)
-* __table__ {array} The card(s) on the table. There are times when the array is empty
-* __getValidPlays__ {function} returns all valid plays for your current hand
+* __```myView```__ {object} a snapshot of the game with the following properties:
+  * __hand__ {list} The cards you currently hold
+  * __players__ {number} The number of players still in the game (including you)
+  * __table__ {array} The card(s) on the table. There are times when the array is empty
+  * __getValidPlays__ {function} returns all valid plays for your current hand
 
 _Note:_ ```myView``` does not expose the history of the game to you. So if you are interested in using previous plays in your strategy you must collect the data you want withing your createPlayer function.
 
