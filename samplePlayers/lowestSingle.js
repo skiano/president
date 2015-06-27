@@ -1,11 +1,15 @@
 
-export default function lowestSingle(isPlaying, state) {
-  if (isPlaying) {
-    state.hand.sort(function (a,b) {
-      return parseInt(a) < parseInt(b);
-    });
-    return lowestValidSingle(state.hand, state.table);
-  }
+export default function createPlayer(setName) {
+  setName('lowestSingle');
+
+  return function lowestSingle(isPlaying, state) {
+    if (isPlaying) {
+      state.hand.sort(function (a, b) {
+        return parseInt(a) < parseInt(b);
+      });
+      return lowestValidSingle(state.hand, state.table);
+    }
+  };
 }
 
 function lowestValidSingle(hand, table) {
