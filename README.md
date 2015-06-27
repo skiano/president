@@ -5,7 +5,7 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 #### Installation
 
 ```
-npm install skiano.president
+$ npm install skiano.president
 ```
 
 #### The Rules
