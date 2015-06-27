@@ -66,8 +66,9 @@ function createPlayer(setName) {
   setName('myAwsomeStrategy')
 
   return function player(isMyPlay, myView) {
-    if (isMyPlay) // it is your turn to play; return your play
-    else  // someone else is playing. just watch...
+    if (isMyPlay) {
+    } else {
+    }
   }
 }
 ```
