@@ -63,7 +63,7 @@ To play the game, you create a function that returns a player function. The play
 ```javascript
 
 function createPlayer(setName) {
-  setName('myAwsomeStrategy')
+  setName('myStrategy')
 
   return function player(isMyPlay, myView) {
     if (isMyPlay) {
