@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "mocha -r should --compilers js:babel/register",
-    "test-watch": "mocha test -r should -w lib --reporter min --compilers js:babel/register",
+    "test-watch": "mocha test -r should -w lib/** --reporter min --compilers js:babel/register",
     "postinstall": "gulp default"
   },
   "repository": {
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/skiano/president",
   "devDependencies": {
     "mocha": "^2.2.5",
-    "should": "^7.0.1"
+    "should": "^7.0.1",
+    "sinon": "^1.15.3"
   }
 }

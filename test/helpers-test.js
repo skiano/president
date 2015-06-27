@@ -1,8 +1,67 @@
 
-describe('helpers', function () {
-  var unit, deck;
+var assert = require('should');
+var constants = require('../lib/constants');
+var MODULE_PATH = '../lib/helpers';
+
+describe('helpers: advancePlayer', function () {
+  var unit, state;
+
   beforeEach(function () {
-    unit = require('../lib/helpers');
+    unit = require(MODULE_PATH)
+    state = {
+      player: 0,
+      strategies: [0,1,2,3],
+      history: [],
+      direction: 1
+    };
+  });
+
+  it('handle normal play', function () {
+    state.player = 0;
+    state.history = ['4h','5h'];
+    unit.advancePlayer(state);
+    state.player.should.equal(1);
+  });
+
+  it('maintain direction', function () {
+    state.direction = -1;
+    state.history = ['4h','5h'];
+    unit.advancePlayer(state);
+    state.player.should.equal(3);
+  });
+
+  it('handle clearing table', function () {
+    state.history = ['4h','2h'];
+    unit.advancePlayer(state);
+    state.player.should.equal(0);
+  });
+
+  it('handle reversing', function () {
+    state.history = ['4h','3h'];
+    unit.advancePlayer(state);
+    state.player.should.equal(3);
+    state.direction.should.equal(-1);
+  });
+
+  it('handle skipping', function () {
+    state.history = ['4h','4h'];
+    unit.advancePlayer(state);
+    state.player.should.equal(2);
+  });
+
+  it('handle stale state', function () {
+    state.passCount = state.strategies.length + 1;
+    state.history = ['4h'];
+    unit.advancePlayer(state);
+    state.history = ['4h', 0];
+  });
+});
+
+describe('helpers: utilities', function () {
+  var unit, deck;
+
+  beforeEach(function () {
+    unit = require(MODULE_PATH);
     deck = [
       '10c','10d','10h','10s','11c','11d','11h','11s','12c','12d',
       '12h','12s','13c','13d','13h','13s','14c','14d','14h','14s',
@@ -33,5 +92,115 @@ describe('helpers', function () {
     unit.hasCard(['2h','3c'], '13h').should.be.false();
     unit.hasCard(['2h','3c'], '3h').should.be.false();
     unit.hasCard(['2h','3c'], '2h').should.be.true();
+  });
+
+  it('hasCards', function () {
+    unit.hasCards(['2h','3c','4d'], ['2h','13h']).should.be.false();
+    unit.hasCards(['2h','3c','4d'], ['2h','4d','3c']).should.be.true();
+  });
+
+  it('removeCard', function () {
+    var hand = ['2h','3c','4d'];
+    unit.removeCard(hand, '2h')
+    hand.should.eql(['3c','4d']);
+
+    assert.throws(function () {
+      unit.removeCard(hand, '2d');
+    });
+  });
+
+  it('removeFromHand', function () {
+    var hand = ['2h','3c','4d'];
+    unit.removeFromHand(hand, ['3c','4d']);
+    hand.should.eql(['2h']);
+    unit.removeFromHand(hand, '2h')
+    hand.should.eql([]);
+  });
+
+  it('currentCard', function () {
+    unit.currentCard([1,2,3]).should.equal(3);
+  });
+
+  it('previousCard', function () {
+    unit.previousCard([1,2,3]).should.equal(2);
+  });
+
+  it('shouldSkip', function () {
+    unit.shouldSkip(['7d','7h']).should.be.true();
+  });
+
+  it('shouldClear', function () {
+    unit.shouldClear(['13d','2h']).should.be.true();
+  });
+
+  it('shouldReverse', function () {
+    unit.shouldReverse(['13d','3d']).should.be.true();
+  });
+
+  it('shouldReverse', function () {
+    unit.shouldReverse(['13d','3d']).should.be.true();
+  });
+
+  it('advance', function () {
+    unit.advance(0, 10, 1).should.equal(1);
+    unit.advance(0, 10, -2).should.equal(8);
+    unit.advance(0, 10, 12).should.equal(2);
+    unit.advance(0, 10, -12).should.equal(8);
+  });
+
+  it('hasWon', function () {
+    unit.hasWon([1,2]).should.be.false();
+    unit.hasWon([]).should.be.true();
+  });
+
+  it('gameOver', function () {
+    unit.gameOver({
+      strategies: []
+    }).should.be.true();
+
+    unit.gameOver({
+      strategies: [1,2,3],
+      gameLength: constants.MAX_LENGTH + 1
+    }).should.be.true();
+
+    unit.gameOver({
+      strategies: [1,2,3],
+      gameLength: constants.MAX_LENGTH - 1
+    }).should.be.false();
+  });
+
+  it('reduceMulti', function () {
+    unit.reduceMulti(['7c','7d','7h']).should.equal(7);
+    unit.reduceMulti(['7c','10d']).should.equal(0);
+  });
+
+  it('isSpecialCard', function () {
+    unit.isSpecialCard(constants.REVERSE_VALUE+'h').should.be.true();
+    unit.isSpecialCard(constants.CLEAR_VALUE+'h').should.be.true();
+    unit.isSpecialCard('10h').should.be.false();
+  });
+
+  it('checkSinglePlay', function () {
+    unit.checkSinglePlay([3,3], 13).should.be.false();
+    unit.checkSinglePlay(13, 3).should.be.false();
+    unit.checkSinglePlay(3, 13).should.be.true();
+    unit.checkSinglePlay(6, 6).should.be.true();
+  });
+
+  it('checkMultiPlay', function () {
+    unit.checkMultiPlay(13, [4,4]).should.be.true();
+    unit.checkMultiPlay([13,13], [4,4,4]).should.be.true();
+    unit.checkMultiPlay([4,4,4], [13,13]).should.be.false();
+    unit.checkMultiPlay([4,4], [13,13]).should.be.true();
+    unit.checkMultiPlay([10,10], [9,9]).should.be.false();
+    unit.checkMultiPlay([9,9], [9,9]).should.be.true();
+  });
+
+  it('getPlayerId', function () {
+    var explicit = function () {};
+    explicit.playerId = 'id';
+    unit.getPlayerId(explicit, 3).should.equal('id:3');
+    unit.getPlayerId(function named() {}, 2).should.equal('named:2');
+    unit.getPlayerId(function() {}, 1).should.equal(constants.PLAYER_PREFIX + ':1');
   });
 });
