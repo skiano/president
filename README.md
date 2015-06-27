@@ -2,7 +2,9 @@
 
 An implementation of the cardgame [President](https://en.wikipedia.org/wiki/President_(card_game)#General_rules) (AKA asshole)
 
-### Overview of rules (as implemented)
+#### The Rules
+
+_This describes the rules as implemented by this function. There are variations_
 
 * Setup
   * All cards are dealt to players (as evenly as possible)
@@ -31,13 +33,13 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 
 
 
-### Installation
+#### Installation
 
 ```
 npm install skiano.president
 ```
 
-### The President Function
+#### The President Function
 
 ```president``` is a function that takes players as inputs (functions that describe strategy), and returns the results of a single game with those players.
 
@@ -52,7 +54,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 ```
 
-### The Player Function
+#### The Player Function
 
 To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
