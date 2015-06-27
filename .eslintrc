@@ -1,7 +1,15 @@
+
 {
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0,
-    "amd": true
+    "quotes": [2, "single"],
+    "curly": [2, "multi-line"]
   }
 }
