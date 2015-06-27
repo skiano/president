@@ -25,12 +25,10 @@ var gameResults = president(playerA, playerB, playerC);
 
 A player function recieves only two arguments
 
-```
+```javascript
 function player(isPlaying, state) {
   if (isPlaying) {
-    // it is your turn to play
-    // you must look at state.hand
-    // and decide which cards to play
+    // it is your turn to play; return your move
   } else {
     // someone else is playing
   }
@@ -39,18 +37,18 @@ function player(isPlaying, state) {
 
 The state is only a snapshot of what is off the game at a gien moment. If you want to use history to inform your decisions, do something like:
 
-```
-(function playerGenerator() {
-  // track whatever info you want
-  return function player() {
-    // use your info to play
+```javascript
+var player = (function playerGenerator() {
+  // track data
+  return function player(isPlaying) {
+    // use data
   }
 })();
 ```
 
 #### The Results
 
-```
+```javascript
 {
   winner: 'playerB',
   rank: ['playerB','playerC,'playerA'],
