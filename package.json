@@ -11,6 +11,7 @@
   "scripts": {
     "test": "mocha -r should --compilers js:babel/register",
     "test-watch": "mocha test -r should -w lib/** --reporter min --compilers js:babel/register",
+    "test-cover": "babel-istanbul cover _mocha --include-babel-polyfill",
     "postinstall": "gulp default"
   },
   "repository": {
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/skiano/president",
   "devDependencies": {
+    "babel-istanbul": "^0.2.9",
     "mocha": "^2.2.5",
     "proxyquire": "^1.5.0",
     "should": "^7.0.1",

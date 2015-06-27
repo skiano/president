@@ -196,6 +196,11 @@ describe('helpers: utilities', function () {
     unit.checkMultiPlay([9,9], [9,9]).should.be.true();
   });
 
+  it('isVallidPlay', function () {
+    // TODO: make this awessome
+    // unit.isVallidPlay(history, play, hand).should.be.true();
+  });
+
   it('getPlayerId', function () {
     var explicit = function () {};
     explicit.playerId = 'id';
