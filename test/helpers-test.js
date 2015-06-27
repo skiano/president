@@ -203,4 +203,10 @@ describe('helpers: utilities', function () {
     unit.getPlayerId(function named() {}, 2).should.equal('named:2');
     unit.getPlayerId(function() {}, 1).should.equal(constants.PLAYER_PREFIX + ':1');
   });
+
+  it('recordEvent', function () {
+    unit.recordEvent({
+      
+    })
+  });
 });

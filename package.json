@@ -25,6 +25,7 @@
   "homepage": "https://github.com/skiano/president",
   "devDependencies": {
     "mocha": "^2.2.5",
+    "proxyquire": "^1.5.0",
     "should": "^7.0.1",
     "sinon": "^1.15.3"
   }
