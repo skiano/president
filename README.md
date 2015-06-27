@@ -49,9 +49,14 @@ var playerA = function () {};
 var playerB = function () {};
 var playerC = function () {};
 
-var gameResults = president(playerA, playerB, playerC);
+var results = president(playerA, playerB, playerC);
 
 ```
+
+```results``` is an object with the folowing properties:
+* __winner__ {string} The id of the winning player
+* __rank__ {list} A list of player ids sorted from winner to loser
+* __events__ {list} The complete history of the game
 
 #### The Player Function
 
