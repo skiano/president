@@ -1,4 +1,6 @@
 
+import {getValue} from '../lib/helpers';
+
 export default function createPlayer(setName) {
   setName('lowestSingle');
 
@@ -14,7 +16,7 @@ export default function createPlayer(setName) {
 
 function lowestValidSingle(hand, table) {
   var play = hand.pop();
-  if (parseInt(play) >= parseInt(table)) {
+  if (getValue(play) >= getValue(table)) {
     return play;
   } else if (hand.length > 0) {
     return lowestValidSingle(hand, table);

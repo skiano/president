@@ -117,8 +117,8 @@ describe('helpers: utilities', function () {
     hand.should.eql([]);
   });
 
-  it('currentCard', function () {
-    unit.currentCard([1,2,3]).should.equal(3);
+  it('currentCards', function () {
+    unit.currentCards([1,2,3]).should.equal(3);
   });
 
   it('previousCard', function () {
