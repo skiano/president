@@ -87,6 +87,6 @@ var player = (function playerGenerator() {
 * __hand__ {list} The cards you currently hold
 * __players__ {number} The number of players left in the game (including you)
 * __table__ {number or array} The card(s) on the table. If there are no cards table=0
-* __testMove__ {function} A function you are free to use to vallidate a move before you commit to it
+* __testMove__ {function} A function you may use to vallidate a move before you commit to it
 
 
