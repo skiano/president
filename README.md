@@ -65,7 +65,7 @@ To play the game, you create a player function that expresses your strategy. Thi
 
 ```javascript
 function player(isMyPlay, myView) {
-  if (isMyTurn) {
+  if (isMyPlay) {
     // it is your turn to play; return your play
   } else {
     // someone else is playing. just watch...
@@ -78,7 +78,7 @@ function player(isMyPlay, myView) {
 ```javascript
 var player = (function playerGenerator() {
   // track data
-  return function player(isMyTurn, myView) {
+  return function player(isMyPlay, myView) {
     // use data
   }
 })();
