@@ -6,18 +6,18 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 
 _This describes the rules as implemented by this function. There are variations_
 
-* Setup
+* __Setup__
   * All cards are dealt to players (as evenly as possible)
   * Players can only see their own hand
   * Whoever has the 4 of clubs begins by placing it on the table (automatic)
   * Gameplay rotates through the players (beginning clockwise)
 
-* Goals
+* __Goals__
   * Players are trying to get rid of all their cards
   * Players exit the game when the run out of cards
   * The last player holdind cards looses
 
-* Rules
+* __Rules__
   * You can play a single card or multiples __if they are all the same numeric value__
   * You must always play an equal or higher value than the preivious move
   * Value follows this heirarchy
