@@ -206,11 +206,29 @@ describe('helpers: utilities', function () {
 
   it('recordEvent', function () {
     var state = {
-      players: [],
-      history: [1],
+      player: 0,
+      players: [
+        {playerId: 'a'},
+        {playerId: 'b'},
+        {playerId: 'c'}
+      ],
+      history: [],
+      direction: 1,
       events: []
     };
 
-    unit.recordEvent(state);
+    unit.recordEvent(state, false);
+    state.player = 1;
+    state.history.push('3h');
+    unit.recordEvent(state, true);
+    state.player = 2;
+    state.history.push(['4h','5d']);
+    unit.recordEvent(state, true, true);
+
+    state.events.should.eql([
+      {player: 'a', card: null, finished: false},
+      {player: 'b', card: '3h', finished: false},
+      {player: 'c', card: ['4h','5d'], finished: true}
+    ]);
   });
 });
