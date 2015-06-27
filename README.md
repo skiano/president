@@ -36,7 +36,8 @@ _This describes the rules as implemented, ignoring other variations_
   * Playing a __2__ resets the table to the lowest value
   * Playing a __3__ reverses the direction of gameplay
   * If you cannot play a higher card you must pass
-  * If all the players pass (full circle) the table is cleared and the next player is free to play anything
+  * If all the players pass (full circle) the table is cleared.
+  * When the table is cleared the following player may play anything they have
 
 ## The interface
 
