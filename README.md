@@ -8,7 +8,9 @@ An implementation of the cardgame President (AKA asshole)
 npm install skiano.president
 ```
 
-## Usage
+### The President Function
+
+```president``` is a function that takes players as inputs (functions that describe strategy), and returns the results of a single game with those players.
 
 ```javascript
 var president = require('skiano.president');
@@ -21,7 +23,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 ```
 
-#### The Player Function
+### The Player Function
 
 To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
