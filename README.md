@@ -41,9 +41,9 @@ _This describes the rules as implemented, ignoring other variations_
 
 ## The interface
 
-#### The President Function
+#### Running a single game
 
-```president``` is a function that takes players creators as inputs and returns the results of a single game with those players.
+```president``` is a function that takes players creators, runs them to create players, and returns the result of one game.
 
 ```javascript
 var president = require('skiano.president');
@@ -63,11 +63,12 @@ To play the game, you create a function that returns a player function. The play
 ```javascript
 
 function createPlayer(setName) {
-  setName('myAwsomeStrategy')
+  setName('myStrategy')
 
   return function player(isMyPlay, myView) {
-    if (isMyPlay) // it is your turn to play; return your play
-    else  // someone else is playing. just watch...
+    if (isMyPlay) {
+    } else {
+    }
   }
 }
 ```
