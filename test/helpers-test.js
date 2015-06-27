@@ -10,7 +10,7 @@ describe('helpers: advancePlayer', function () {
     unit = require(MODULE_PATH)
     state = {
       player: 0,
-      strategies: [0,1,2,3],
+      players: [0,1,2,3],
       history: [],
       direction: 1
     };
@@ -50,7 +50,7 @@ describe('helpers: advancePlayer', function () {
   });
 
   it('handle stale state', function () {
-    state.passCount = state.strategies.length + 1;
+    state.passCount = state.players.length + 1;
     state.history = ['4h'];
     unit.advancePlayer(state);
     state.history = ['4h', 0];
@@ -155,16 +155,16 @@ describe('helpers: utilities', function () {
 
   it('gameOver', function () {
     unit.gameOver({
-      strategies: []
+      players: []
     }).should.be.true();
 
     unit.gameOver({
-      strategies: [1,2,3],
+      players: [1,2,3],
       gameLength: constants.MAX_LENGTH + 1
     }).should.be.true();
 
     unit.gameOver({
-      strategies: [1,2,3],
+      players: [1,2,3],
       gameLength: constants.MAX_LENGTH - 1
     }).should.be.false();
   });
@@ -205,8 +205,12 @@ describe('helpers: utilities', function () {
   });
 
   it('recordEvent', function () {
-    unit.recordEvent({
-      
-    })
+    var state = {
+      players: [],
+      history: [1],
+      events: []
+    };
+
+    unit.recordEvent(state);
   });
 });
