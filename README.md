@@ -26,8 +26,9 @@ _This describes the rules as implemented, ignoring other variations_
 
 * __Rules__
   * You can play a single card or multiples __if they are all the same numeric value__
-  * You must always play an equal or higher value than the preivious move
+  * You must always play an equal or higher value than the preivious play
   * Value follows this heirarchy
+    * Ace is high 
     * Higher numbers are more valuable:  __4 > 3 and [4,4] > [3,3]__
     * Doubles are higher than singles, tripples higher than doubles: __[4,4,4] > [6,6] > 13__
   * If you play the same value, the next player is skipped
@@ -63,9 +64,9 @@ var results = president(playerA, playerB, playerC);
 To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
 ```javascript
-function player(isMyTurn, myView) {
+function player(isMyPlay, myView) {
   if (isMyTurn) {
-    // it is your turn to play; return your move
+    // it is your turn to play; return your play
   } else {
     // someone else is playing. just watch...
   }
@@ -87,6 +88,6 @@ var player = (function playerGenerator() {
 * __hand__ {list} The cards you currently hold
 * __players__ {number} The number of players left in the game (including you)
 * __table__ {number or array} The card(s) on the table. If there are no cards table=0
-* __testMove__ {function} A function you may use to vallidate a move before you commit to it
+* __testPlay__ {function} A function you may use to vallidate a play before you commit to it
 
 
