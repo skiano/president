@@ -2,6 +2,12 @@
 
 An implementation of the cardgame [President](https://en.wikipedia.org/wiki/President_(card_game)#General_rules).
 
+#### Installation
+
+```
+npm install skiano.president
+```
+
 #### The Rules
 
 _This describes the rules as implemented by this function only._
@@ -29,16 +35,6 @@ _This describes the rules as implemented by this function only._
   * Playing a __2__ resets the table to the lowest value
   * Playing a __3__ reverses the direction of gameplay
   * If you cannot play a higher card you must pass
-
-  
-
-
-
-#### Installation
-
-```
-npm install skiano.president
-```
 
 #### The President Function
 
