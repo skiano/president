@@ -2,9 +2,15 @@
 
 An implementation of the cardgame [President](https://en.wikipedia.org/wiki/President_(card_game)#General_rules).
 
-#### The Rules
+#### Installation
 
-_This describes the rules as implemented by this function only._
+```
+$ npm install skiano.president
+```
+
+## The Rules
+
+_This describes the rules as implemented, ignoring other variations_
 
 * __Setup__
   * Between 3 and 8 players
@@ -30,19 +36,11 @@ _This describes the rules as implemented by this function only._
   * Playing a __3__ reverses the direction of gameplay
   * If you cannot play a higher card you must pass
 
-  
-
-
-
-#### Installation
-
-```
-npm install skiano.president
-```
+## The interface
 
 #### The President Function
 
-```president``` is a function that takes players as inputs (functions that describe strategy), and returns the results of a single game with those players.
+```president``` is a function that takes players as inputs (functions that describe strategy) and returns the results of a single game with those players.
 
 ```javascript
 var president = require('skiano.president');
@@ -51,11 +49,16 @@ var playerA = function () {};
 var playerB = function () {};
 var playerC = function () {};
 
-var gameResults = president(playerA, playerB, playerC);
+var results = president(playerA, playerB, playerC);
 
 ```
 
-#### The Player Function
+```results``` is an object with the folowing properties:
+* __winner__ {string} The id of the winning player
+* __rank__ {list} A list of player ids sorted from winner to loser
+* __events__ {list} The complete history of the game
+
+#### The Player Functions
 
 To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
@@ -80,4 +83,10 @@ var player = (function playerGenerator() {
 })();
 ```
 
-_TODO: more info..._
+```myView``` is an object with the following properties:
+* __hand__ {list} The cards you currently hold
+* __players__ {number} The number of players left in the game (including you)
+* __table__ {number or array} The card(s) on the table. If there are no cards table=0
+* __testMove__ {function} A function you may use to vallidate a move before you commit to it
+
+
