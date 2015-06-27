@@ -13,17 +13,17 @@ npm install skiano.president
 ```javascript
 var president = require('skiano.president');
 
-// 'stateless' players
-var playerA = function (isPlaying, state) {};
-var playerB = function (isPlaying, state) {};
+var gameResults = president(playerA, playerB, playerC);
 
-// 'stateful' players
-var playerC = (function () {
-  var history = [];
-  return function (isPlaying, state) {
-    history.push(state.table);
-  }
-})();
+// gameResults = {
+//  winner: 'playerB',
+//  rank: ['playerB','playerC,'playerA'],
+//  events: [
+//   {player: 'playerA', card: '4c', finished: false},
+//   {player: 'playerB', card: '9h', finished: false}
+//   {player: 'playerC', card: ['11d', '11s'], finished: false}
+//   ... more events
+//   {player: 'playerA', card: '7h', finished: true},
+//  ]
 
-var gameResults = president(playerA, playerB, playerC); // for example [0, 1, 3, 4]
 ```
