@@ -90,4 +90,13 @@ var player = (function playerGenerator() {
 * __table__ {number or array} The card(s) on the table. If there are no cards table=0
 * __testPlay__ {function} A function you may use to vallidate a play before you commit to it
 
+#### The Deck
+
+Cards are represented as strings with the value and a letter representing their suit. Face cards are represented by their numerical value.
+
+Examples:
+* __4h__: Four of hearts
+* __11d__: Jack of Diamonds
+* __2s__: Two of Spades
+* __14c__: Ace of clubs
 
