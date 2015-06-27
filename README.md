@@ -23,7 +23,9 @@ var gameResults = president(playerA, playerB, playerC);
 
 #### The Player Function
 
-A player function recieves only two arguments: ```isMyTurn``` and ```myView```. If ```isMyTurn``` is ```true```, you must return your move. You can return one card, ```4h``` for example. Or an array of cards ```[5c,10d]```. If you cannot make a valid move return ```false```. See below for more information.
+A player function recieves only two arguments: ```isMyTurn``` and ```myView```.
+
+If ```isMyTurn``` is ```true```, you must return your move. You can return one card, ```4h``` for example. Or an array of cards ```[5c,10d]```. If you cannot make a valid move return ```false```. See below for more information.
 
 ```javascript
 function player(isMyTurn, myView) {
