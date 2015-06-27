@@ -12,6 +12,7 @@ npm install skiano.president
 
 ```javascript
 var president = require('skiano.president');
+
 var playerA = function () {};
 var playerB = function () {};
 var playerC = function () {};
@@ -20,6 +21,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 ```
 
+### The Results
 ```
 {
   winner: 'playerB',
