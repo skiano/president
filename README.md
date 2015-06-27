@@ -38,7 +38,7 @@ _This describes the rules as implemented by this function only._
 
 #### The President Function
 
-```president``` is a function that takes players as inputs (functions that describe strategy), and returns the results of a single game with those players.
+```president``` is a function that takes players as inputs (functions that describe strategy) and returns the results of a single game with those players.
 
 ```javascript
 var president = require('skiano.president');
