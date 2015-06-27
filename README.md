@@ -89,7 +89,7 @@ var player = (function playerGenerator() {
 ```myView``` is an object with the following properties:
 * __hand__ {list} The cards you currently hold
 * __players__ {number} The number of players left in the game (including you)
-* __table__ {number or array} The card(s) on the table. If there are no cards table=0
+* __table__ {array} The card(s) on the table. There are times when the array is empty
 * __getValidPlays__ {function} returns all valid plays for your current hand
 
 #### The Deck
