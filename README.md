@@ -28,6 +28,7 @@ _This describes the rules as implemented, ignoring other variations_
   * You can play a single card or multiples __if they are all the same numeric value__
   * You must always play an equal or higher value than the preivious move
   * Value follows this heirarchy
+    * Ace is high 
     * Higher numbers are more valuable:  __4 > 3 and [4,4] > [3,3]__
     * Doubles are higher than singles, tripples higher than doubles: __[4,4,4] > [6,6] > 13__
   * If you play the same value, the next player is skipped
