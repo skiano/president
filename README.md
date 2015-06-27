@@ -43,7 +43,7 @@ _This describes the rules as implemented, ignoring other variations_
 
 #### The President Function
 
-```president``` is a function that takes players as inputs (functions that describe strategy) and returns the results of a single game with those players.
+```president``` is a function that takes players creators as inputs and returns the results of a single game with those players.
 
 ```javascript
 var president = require('skiano.president');
@@ -56,7 +56,7 @@ var results = president(createPlayer, createPlayer, createPlayer);
 * __rank__ {list} A list of player ids sorted from winner to loser
 * __events__ {list} The complete history of the game
 
-#### The Player Functions
+#### Creating a Player
 
 To play the game, you create a function that returns a player function. The player function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
@@ -64,11 +64,8 @@ To play the game, you create a function that returns a player function. The play
 
 function createPlayer(playerIdx) {
   return function player(isMyPlay, myView) {
-    if (isMyPlay) {
-      // it is your turn to play; return your play
-    } else {
-      // someone else is playing. just watch...
-    }
+    if (isMyPlay) // it is your turn to play; return your play
+    else  // someone else is playing. just watch...
   }
 }
 ```
@@ -78,6 +75,8 @@ function createPlayer(playerIdx) {
 * __players__ {number} The number of players still in the game (including you)
 * __table__ {array} The card(s) on the table. There are times when the array is empty
 * __getValidPlays__ {function} returns all valid plays for your current hand
+
+```myView``` does not expose the history of the game to you. So if you want to tack anything for your strategy, You must do so withing your own createPlayer function.
 
 #### The Deck
 
