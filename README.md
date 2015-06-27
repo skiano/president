@@ -92,11 +92,15 @@ var player = (function playerGenerator() {
 
 #### The Deck
 
-Cards are represented as strings with the value and a letter representing their suit. Face cards are represented by their numerical value.
+Cards are represented as strings with the value and a letter representing their suit. Face cards are represented by their numerical value. Your hand is a list of card strings.
 
-Examples:
-* __4h__: Four of hearts
-* __11d__: Jack of Diamonds
-* __2s__: Two of Spades
-* __14c__: Ace of clubs
+For Example:
 
+```javascript
+[
+ '4h',   // Four of hearts
+ '11d',  // Jack of Diamonds
+ '2s',   // Two of Spades
+ '14c'   // Ace of clubs
+]
+```
