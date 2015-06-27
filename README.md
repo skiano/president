@@ -1,4 +1,4 @@
-# president
+# President
 
 An implementation of the cardgame [President](https://en.wikipedia.org/wiki/President_(card_game)#General_rules).
 
