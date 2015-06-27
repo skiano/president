@@ -82,7 +82,7 @@ function createPlayer(setName) {
   * __table__ {array} The card(s) on the table. There are times when the array is empty
   * __getValidPlays__ {function} returns all valid plays for your current hand
 
-_Note:_ ```myView``` does not expose the history of the game to you. So if you are interested in using previous plays in your strategy you must collect the data you want withing your ```createPlayer``` function.
+_Note:_ ```myView``` does not expose the history of the game to you. So if you are interested in using previous plays in your strategy you must collect the data you want within ```createPlayer()```.
 
 #### The Deck
 
