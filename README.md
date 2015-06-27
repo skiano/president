@@ -35,7 +35,7 @@ function player(isPlaying, state) {
 }
 ```
 
-The state is only a snapshot of the game at a specific moment. No history is directly exposed. If you want to use history (ie: card counting) to inform your decisions, nothing is saying you cannot do something like:
+The ```state``` argument is only a snapshot of the game at a specific moment. No history is directly exposed. If you want to use history (ie: card counting) to inform your decisions, nothing is saying you cannot do something like:
 
 ```javascript
 var player = (function playerGenerator() {
