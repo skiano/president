@@ -52,7 +52,7 @@ var results = president(createPlayer, createPlayer, createPlayer);
 ```
 
 * __```results```__ is an object with the folowing properties:
-  * __```winner__ {string} The id of the winning player
+  * __```winner```__ {string} The id of the winning player
   * __```rank```__ {list} A list of player ids sorted from winner to loser
   * __```events```__ {list} The complete history of the game
 
