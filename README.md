@@ -23,7 +23,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 #### The Player Function
 
-To play the game, you create a player function that expresses your strategy. This function will be called each time an event is going to happen in the game. When the event is your turn you may return cards you would like to play.
+To play the game, you create a player function that expresses your strategy. This function will be called for each game event. When it is your turn you may return cards from your hand. (more on this below)
 
 ```javascript
 function player(isMyTurn, myView) {
@@ -46,3 +46,4 @@ var player = (function playerGenerator() {
 })();
 ```
 
+_TODO: more info..._
