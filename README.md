@@ -89,12 +89,12 @@ _**Note:** ```myView``` does not expose the history of the game to you. So if yo
 Cards are represented as strings. Face cards are represented by their numerical value. Your hand is a list of card strings.
 
 For Example:
-
 ```javascript
-[
- '4h',   // Four of hearts
- '11d',  // Jack of Diamonds
- '2s',   // Two of Spades
- '14c'   // Ace of clubs
-]
+var yourHand = ['4h','11d','2s','14c'];
 ```
+Represents the following
+ * Four of hearts
+ * Jack of Diamonds
+ * Two of Spades
+ * Ace of clubs
+
