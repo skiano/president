@@ -23,7 +23,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 #### The Player Function
 
-A player function recieves only two arguments: ```isPlaying``` and ```state```. If isPlaying is true, it is your turn and you must return your move. You can return one card, ```4h``` for example. Or an array of cards ```[5c,10d]```. If you cannot make a valid move return ```false```.
+A player function recieves only two arguments: ```isPlaying``` and ```state```. If ```yourTurn``` is ```true```, you must return your move. You can return one card, ```4h``` for example. Or an array of cards ```[5c,10d]```. If you cannot make a valid move return ```false```. See below for more information.
 
 ```javascript
 function player(isPlaying, state) {
@@ -35,7 +35,7 @@ function player(isPlaying, state) {
 }
 ```
 
-The state is only a snapshot of what is off the game at a gien moment. If you want to use history to inform your decisions, do something like:
+The state is only a snapshot of the game at a specific moment. No history is directly exposed. If you want to use history (ie: card counting) to inform your decisions, nothing is saying you cannot do something like:
 
 ```javascript
 var player = (function playerGenerator() {
