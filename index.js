@@ -2,7 +2,7 @@
 require("babel/register");
 
 const game = require('./lib');
-const player = require('./samplePlayers/a');
+const player = require('./samplePlayers/lowestSingle');
 const results = game(player, player, player, player, player, player);
 
 // http://unix.stackexchange.com/questions/43408/printing-colored-text-using-echo
