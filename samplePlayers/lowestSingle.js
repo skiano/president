@@ -1,26 +1,13 @@
 
-import {getValue} from '../lib/helpers';
+// import {getValue} from '../lib/helpers';
 
 export default function createPlayer(setName) {
   setName('lowestSingle');
 
-  return function lowestSingle(isPlaying, state) {
+  return function highestValid(isPlaying, state) {
     if (isPlaying) {
-      state.hand.sort(function (a, b) {
-        return parseInt(a) < parseInt(b);
-      });
-      return lowestValidSingle(state.hand, state.table);
+      var plays = state.getUniqueValidPlays();
+      return plays[plays.length - 1];
     }
   };
-}
-
-function lowestValidSingle(hand, table) {
-  var play = hand.pop();
-  if (getValue(play) >= getValue(table)) {
-    return play;
-  } else if (hand.length > 0) {
-    return lowestValidSingle(hand, table);
-  } else {
-    return false;
-  }
 }
