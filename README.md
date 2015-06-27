@@ -23,7 +23,7 @@ var gameResults = president(playerA, playerB, playerC);
 
 #### The Player Function
 
-A player function recieves only two arguments
+A player function recieves only two arguments: ```isPlaying``` and ```state```. If isPlaying is true, it is your turn and you must return your move. You can return one card, ```4h``` for example. Or an array of cards ```[5c,10d]```. If you cannot make a valid move return ```false```.
 
 ```javascript
 function player(isPlaying, state) {
