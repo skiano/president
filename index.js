@@ -19,12 +19,12 @@ const colors = [
 
 const colorEnd = '\033[0m';
 
-results.events.forEach(function (r) {
-  const player = getPlayerString(r.player);
-  const sortedHand = sortHand(r.hand);
-  const play = getPlay(r.play, r.finished);
-  console.log(player, '|', play, '|', sortedHand);
-});
+// results.events.forEach(function (r) {
+//   const player = getPlayerString(r.player);
+//   const sortedHand = sortHand(r.hand);
+//   const play = getPlay(r.play, r.finished);
+//   console.log(player, '|', play, '|', sortedHand);
+// });
 
 function getPlay(play, finished) {
   play = play || '-';

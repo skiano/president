@@ -6,10 +6,6 @@ export default function createPlayer(setName) {
 
   return function lowestSingle(isPlaying, state) {
     if (isPlaying) {
-
-
-      state.getValidPlays();
-
       state.hand.sort(function (a, b) {
         return parseInt(a) < parseInt(b);
       });
