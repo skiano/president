@@ -4,15 +4,16 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 
 ### Overview of rules (as implemented)
 
+* Setup
+  * All cards are dealt to players (as evenly as possible)
+  * Players can only see their own hand
+  * Whoever has the 4 of clubs begins by placing it on the table (automatic)
+  * Gameplay rotates through the players (beginning clockwise)
+
 * Goals
   * Players are trying to get rid of all their cards
   * Players exit the game when the run out of cards
   * The last player with cards looses
-
-* Setup
-  * All cards are dealt to players
-  * Whoever has the 4 of clubs begins by placing it on the table (automatic)
-  * Gameplay rotates through the players (begins clockwise)
 
 * Rules
   * You can play a single card, or multiples if they are all the same numeric value
