@@ -4,7 +4,7 @@ An implementation of the cardgame [President](https://en.wikipedia.org/wiki/Pres
 
 #### The Rules
 
-_This describes the rules as implemented by this function. There are variations_
+_This describes the rules as implemented by this function only._
 
 * __Setup__
   * All cards are dealt to players (as evenly as possible)
