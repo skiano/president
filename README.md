@@ -21,7 +21,7 @@ _This describes the rules as implemented, ignoring other variations_
 
 * __Goals__
   * Players are trying to get rid of all their cards
-  * Players exit the game when the run out of cards
+  * Players exit the game when they run out of cards
   * The last player holding cards looses
 
 * __Rules__
